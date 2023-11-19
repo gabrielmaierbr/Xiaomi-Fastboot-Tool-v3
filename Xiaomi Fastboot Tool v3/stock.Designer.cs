@@ -65,7 +65,8 @@
             this.MaximizeBox = false;
             this.Name = "stock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Stock ROM";
+            this.Text = "Instalar Stock ROM";
+            this.Load += new System.EventHandler(this.stock_Load);
             this.ResumeLayout(false);
 
         }

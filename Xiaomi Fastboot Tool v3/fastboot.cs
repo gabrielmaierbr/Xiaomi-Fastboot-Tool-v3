@@ -126,8 +126,15 @@ namespace Xiaomi_Fastboot_Tool_v3
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                stock stockrom = new stock(textBox1.Text);
-                stockrom.Show();
+                if (File.Exists(textBox1.Text + "/flash_all.bat") == true)
+                {
+                    stock stockrom = new stock(textBox1.Text);
+                    stockrom.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Caminho incorreto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
             if (comboBox1.SelectedIndex == 1)
@@ -163,7 +170,7 @@ namespace Xiaomi_Fastboot_Tool_v3
             if (comboBox1.SelectedIndex == 3)
             {
                 paranoid aospa = new paranoid();
-                aospa.Show();
+                aospa.ShowDialog();
             }
         }
 

@@ -14,19 +14,24 @@ namespace Xiaomi_Fastboot_Tool_v3
 {
     public partial class stock : Form
     {
-        private String Text;
-        public stock(string Textbox)
+        public string TextFastboot;
+
+        public stock()
         {
             InitializeComponent();
-            Text = Textbox;
+        }
+        public stock(string textbox)
+        {
+            InitializeComponent();
+            TextFastboot = textbox;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (File.Exists(Text + "/flash_all.bat") == true)
+            if (File.Exists(TextFastboot + "/flash_all.bat") == true)
             {
                 System.Diagnostics.Process process = new Process();
-                process.StartInfo.WorkingDirectory = Text;
+                process.StartInfo.WorkingDirectory = TextFastboot;
                 process.StartInfo.FileName = "flash_all.bat";
                 process.Start();
             }
@@ -38,20 +43,25 @@ namespace Xiaomi_Fastboot_Tool_v3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (File.Exists(Text + "/flash_all_lock.bat") == true)
+            if (File.Exists(TextFastboot + "/flash_all_lock.bat") == true)
             {
                 if (MessageBox.Show("Tem certeza?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     System.Diagnostics.Process process = new Process();
-                    process.StartInfo.WorkingDirectory = Text;
+                    process.StartInfo.WorkingDirectory = TextFastboot;
                     process.StartInfo.FileName = "flash_all_lock.bat";
                     process.Start();
                 }
-                else
-                {
-                    MessageBox.Show("Arquivo flash_all_lock.bat não existe, caminho incorreto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
             }
+            else
+            {
+                MessageBox.Show("Arquivo flash_all_lock.bat não existe, caminho incorreto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void stock_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
