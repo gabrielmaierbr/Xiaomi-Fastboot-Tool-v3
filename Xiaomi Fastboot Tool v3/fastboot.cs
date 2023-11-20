@@ -56,7 +56,7 @@ namespace Xiaomi_Fastboot_Tool_v3
             }
             if (comboBox1.SelectedIndex == 3)
             {
-                button1.Text = "Selecionar zip da ROM";
+                button1.Text = "Selecionar .zip da ROM";
                 button1.Visible = true;
                 button1.Enabled = true;
             }
