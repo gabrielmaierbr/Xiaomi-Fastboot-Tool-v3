@@ -188,5 +188,24 @@ namespace Xiaomi_Fastboot_Tool_v3
                 MessageBox.Show("Arquivo windows_fastboot_update_rom.bat não existe, caminho incorreto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("O comando necessita de Depuração USB ativada.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                if (File.Exists(@"C:/adb/adb.exe") == true)
+                {
+                    System.Diagnostics.Process process = new Process();
+                    process.StartInfo.WorkingDirectory = @"C:/adb";
+                    process.StartInfo.FileName = "adb.exe";
+                    process.StartInfo.Arguments = "reboot bootloader";
+                    process.Start();
+                }
+                else
+                {
+                    MessageBox.Show("Arquivos ADB não encontrados.\n\nInstale os Drivers ADB.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }

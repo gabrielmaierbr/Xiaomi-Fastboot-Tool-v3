@@ -250,12 +250,19 @@ namespace Xiaomi_Fastboot_Tool_v3
 
         private void aDBMinimalSetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            byte[] arquivo = Properties.Resources.minimal_adb_fastboot_v1_4_3_setup;
-            System.IO.File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "minimal_adb_fastboot_v1_4_3_setup.exe"), arquivo);
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            process.StartInfo.FileName = (Path.Combine(Path.GetTempPath(), "minimal_adb_fastboot_v1_4_3_setup.exe"));
-            process.Start();
-            process.WaitForExit();
+            try
+            {
+                byte[] arquivo = Properties.Resources.minimal_adb_fastboot_v1_4_3_setup;
+                System.IO.File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "minimal_adb_fastboot_v1_4_3_setup.exe"), arquivo);
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo.FileName = (Path.Combine(Path.GetTempPath(), "minimal_adb_fastboot_v1_4_3_setup.exe"));
+                process.Start();
+                process.WaitForExit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void instalarTodosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -317,38 +324,59 @@ namespace Xiaomi_Fastboot_Tool_v3
 
         private void miFlashToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (File.Exists(@"adb/miflash/XiaoMiFlash.exe") == true)
+            try
             {
-                System.Diagnostics.Process process2 = new Process();
-                process2.StartInfo.WorkingDirectory = "adb/miflash";
-                process2.StartInfo.FileName = "XiaoMiFlash.exe";
-                process2.Start();
-                process2.WaitForExit();
+                if (File.Exists(@"adb/miflash/XiaoMiFlash.exe") == true)
+                {
+                    System.Diagnostics.Process process2 = new Process();
+                    process2.StartInfo.WorkingDirectory = "adb/miflash";
+                    process2.StartInfo.FileName = "XiaoMiFlash.exe";
+                    process2.Start();
+                    process2.WaitForExit();
+                }
+                else
+                {
+                    MessageBox.Show("Arquivos do Mi Flash não encontrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Arquivos do Mi Flash não encontrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void aDBSetup13ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            byte[] arquivo = Properties.Resources.adbsetup13;
-            System.IO.File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "adbsetup13.exe"), arquivo);
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            process.StartInfo.FileName = (Path.Combine(Path.GetTempPath(), "adbsetup13.exe"));
-            process.Start();
-            process.WaitForExit();
+            try
+            {
+                byte[] arquivo = Properties.Resources.adbsetup13;
+                System.IO.File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "adbsetup13.exe"), arquivo);
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo.FileName = (Path.Combine(Path.GetTempPath(), "adbsetup13.exe"));
+                process.Start();
+                process.WaitForExit();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void aDBSetup143ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            byte[] arquivo = Properties.Resources.adbsetup143;
-            System.IO.File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "adbsetup143.exe"), arquivo);
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            process.StartInfo.FileName = (Path.Combine(Path.GetTempPath(), "adbsetup143.exe"));
-            process.Start();
-            process.WaitForExit();
+            try
+            {
+                byte[] arquivo = Properties.Resources.adbsetup143;
+                System.IO.File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "adbsetup143.exe"), arquivo);
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo.FileName = (Path.Combine(Path.GetTempPath(), "adbsetup143.exe"));
+                process.Start();
+                process.WaitForExit();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -374,7 +402,7 @@ namespace Xiaomi_Fastboot_Tool_v3
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("O bloqueio de Bootloader deve ser feito apenas na ROM Stock", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+            if (MessageBox.Show("O bloqueio de Bootloader deve ser feito apenas na ROM Stock.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 if (MessageBox.Show("Você está na ROM Stock?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {

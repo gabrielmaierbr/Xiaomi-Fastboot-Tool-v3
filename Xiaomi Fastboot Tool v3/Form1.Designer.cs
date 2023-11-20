@@ -51,9 +51,9 @@
             this.platformToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instalarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rOMFastbootToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.customRecoveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -223,7 +223,7 @@
             // 
             this.aDBMinimalSetupToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aDBMinimalSetupToolStripMenuItem.Image")));
             this.aDBMinimalSetupToolStripMenuItem.Name = "aDBMinimalSetupToolStripMenuItem";
-            this.aDBMinimalSetupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aDBMinimalSetupToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.aDBMinimalSetupToolStripMenuItem.Text = "ADB Minimal Setup";
             this.aDBMinimalSetupToolStripMenuItem.Click += new System.EventHandler(this.aDBMinimalSetupToolStripMenuItem_Click);
             // 
@@ -231,7 +231,7 @@
             // 
             this.aDBSetup13ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aDBSetup13ToolStripMenuItem.Image")));
             this.aDBSetup13ToolStripMenuItem.Name = "aDBSetup13ToolStripMenuItem";
-            this.aDBSetup13ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aDBSetup13ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.aDBSetup13ToolStripMenuItem.Text = "ADB Setup 1.3";
             this.aDBSetup13ToolStripMenuItem.Click += new System.EventHandler(this.aDBSetup13ToolStripMenuItem_Click);
             // 
@@ -239,7 +239,7 @@
             // 
             this.aDBSetup143ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aDBSetup143ToolStripMenuItem.Image")));
             this.aDBSetup143ToolStripMenuItem.Name = "aDBSetup143ToolStripMenuItem";
-            this.aDBSetup143ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aDBSetup143ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.aDBSetup143ToolStripMenuItem.Text = "ADB Setup 1.4.3";
             this.aDBSetup143ToolStripMenuItem.Click += new System.EventHandler(this.aDBSetup143ToolStripMenuItem_Click);
             // 
@@ -274,16 +274,6 @@
             this.rOMFastbootToolStripMenuItem.Text = "ROM Fastboot";
             this.rOMFastbootToolStripMenuItem.Click += new System.EventHandler(this.rOMFastbootToolStripMenuItem_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(468, 326);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Gabriel Maier";
-            // 
             // customRecoveryToolStripMenuItem
             // 
             this.customRecoveryToolStripMenuItem.Name = "customRecoveryToolStripMenuItem";
@@ -294,9 +284,19 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.infoToolStripMenuItem.Text = "Sobre";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(468, 326);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Gabriel Maier";
             // 
             // Form1
             // 
